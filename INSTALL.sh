@@ -12,8 +12,58 @@ echo "░██╗░░░░░░░██╗███████╗██�
 echo "this is the install script where you will be installing every thing that you need to make your ml and make your AI dreams come true."
 
 echo "do want to continue with this install or do want Abort"
-echo "  1[Abort]  2[install] "
-read -p "Enter choice [1-2]: "
+# Function to display usage information
+usage() {
+    echo "Usage: $0 {install|abort}"
+    exit 1
+}
+
+# Function to install system packages using pacman
+install_system_packages() {
+    sudo pacman -Syu --noconfirm # Update package list and upgrade all packages
+    sudo pacman -S --noconfirm python python-pip sddm firefox calamares
+}
+
+# Function to install Python packages using pip
+install_python_packages() {
+    python_packages=(
+        numpy
+        scipy
+        pandas
+        scikit-learn
+        tensorflow
+        keras
+        torch
+        torchvision
+        pillow
+        sklearn
+    )
+
+    for package in "${python_packages[@]}"; do
+        pip install "$package"
+    done
+}
+
+# Main script execution
+if [ "$#" -ne 1 ]; then
+    usage
+fi
+
+case "$1" in
+    install)
+        echo "Starting installation of system and Python packages..."
+        install_system_packages
+        install_python_packages
+        echo "Installation completed successfully."
+        ;;
+    abort)
+        echo "Installation aborted."
+        exit 0
+        ;;
+    *)
+        usage
+        ;;
+esac
 
 # Function to install GNOME
 install_gnome() {
