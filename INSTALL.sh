@@ -1,5 +1,20 @@
 #!/bin/bash
 
+
+
+echo "░██╗░░░░░░░██╗███████╗██╗░░░░░░█████╗░░█████╗░███╗░░░███╗███████╗
+      ░██║░░██╗░░██║██╔════╝██║░░░░░██╔══██╗██╔══██╗████╗░████║██╔════╝
+      ░╚██╗████╗██╔╝█████╗░░██║░░░░░██║░░╚═╝██║░░██║██╔████╔██║█████╗░░
+      ░░████╔═████║░██╔══╝░░██║░░░░░██║░░██╗██║░░██║██║╚██╔╝██║██╔══╝░░
+      ░░╚██╔╝░╚██╔╝░███████╗███████╗╚█████╔╝╚█████╔╝██║░╚═╝░██║███████╗
+      ░░░╚═╝░░░╚═╝░░╚══════╝╚══════╝░╚════╝░░╚════╝░╚═╝░░░░░╚═╝╚══════╝"
+
+echo "this is the install script where you will be installing every thing that you need to make your ml and make your AI dreams come true."
+
+echo "do want to continue with this install or do want Abort"
+echo "  1[Abort]  2[install] "
+read -p "Enter choice [1-2]: "
+
 # Function to install GNOME
 install_gnome() {
     pacman -Syu --noconfirm gnome gnome-extra gdm
