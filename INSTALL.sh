@@ -39,7 +39,7 @@ install_python_packages() {
     )
 
     for package in "${python_packages[@]}"; do
-        pip install "$package"
+        pacman -S python-"$package"
     done
 }
 
@@ -107,7 +107,7 @@ esac
 
 # Install machine learning packages
 pacman -Syu --noconfirm python python-pip
-pip install numpy scipy pandas scikit-learn tensorflow keras torch torchvision
+pacman -S python-numpy python-scipy python-pandas python-scikit-learn python-tensorflow python-keras python-torch python-torchvision
 
 # Clean up
 pacman -Scc --noconfirm
