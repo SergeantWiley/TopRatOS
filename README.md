@@ -12,3 +12,7 @@ This template should help get you started developing with Tauri, React and Types
 
 - [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
 OS designated for Machine learning and Artificial Intelligence. Based on Linux Arch, this OS frees up computation power for better learning and adds flexibility to the ML pipeline
+
+# DISCLAIMERS AND BUGS
+- Version: Alpha-1.7.1
+- Early development. Most likely contains tons of bugs. I mean entire nests of them. 
