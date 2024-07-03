@@ -14,8 +14,8 @@ echo "do want to continue with this install or do want Abort"
 
 # Function to install system packages using pacman
 install_system_packages() {
-    sudo pacman -Syu --noconfirm # Update package list and upgrade all packages
-    sudo pacman -S --noconfirm python python-pip sddm firefox calamares
+    yes | sudo pacman -Syu --noconfirm # Update package list and upgrade all packages
+    yes | sudo pacman -S --noconfirm python python-pip sddm firefox calamares
 }
 
 # Function to install Python packages using pip
