@@ -11,11 +11,6 @@ echo "   ░██╗░░░░░░░██╗███████╗█�
 echo "this is the install script where you will be installing every thing that you need to make your ml and make your AI dreams come true."
 
 echo "do want to continue with this install or do want Abort"
-# Function to display usage information
-usage() {
-    echo "Usage: $0 {install|abort}"
-    exit 1
-}
 
 # Function to install system packages using pacman
 install_system_packages() {
