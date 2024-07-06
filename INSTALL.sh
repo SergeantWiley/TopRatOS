@@ -12,6 +12,12 @@ echo "this is the install script where you will be installing every thing that y
 
 echo "do want to continue with this install or do want Abort"
 
+# Function to display usage information
+usage() {
+    echo "Usage: $0 {install|abort}"
+    exit 1
+}
+
 # Function to install system packages using pacman
 install_system_packages() {
     yes | sudo pacman -Syu --noconfirm # Update package list and upgrade all packages
@@ -29,12 +35,10 @@ install_python_packages() {
         keras
         torch
         torchvision
-        pillow
-        sklearn
     )
 
     for package in "${python_packages[@]}"; do
-        pacman -S python-"$package"
+        pip install "$package"
     done
 }
 
