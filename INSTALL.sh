@@ -42,6 +42,31 @@ install_python_packages() {
     done
 }
 
+# Function to delete a file
+delete_file() {
+    FILE_PATH="/usr/share/backgrounds/xfce/xfce"
+
+    if [ -f "$FILE_PATH" ]; then
+        sudo rm "$FILE_PATH"
+        echo "File $FILE_PATH deleted successfully."
+    else
+        echo "File $FILE_PATH not found."
+    fi
+}
+
+# Function to move a file
+move_file() {
+    SOURCE_FILE=~/TopRatOS/xfce
+    DEST_DIR=/usr/share/backgrounds/xfce/
+
+    if [ -f "$SOURCE_FILE" ]; then
+        sudo mv "$SOURCE_FILE" "$DEST_DIR"
+        echo "File $SOURCE_FILE moved to $DEST_DIR successfully."
+    else
+        echo "Source file $SOURCE_FILE not found."
+    fi
+}
+
 # Main script execution
 if [ "$#" -ne 1 ]; then
     usage
