@@ -20,6 +20,7 @@ usage() {
 
 # Function to install system packages using pacman
 install_system_packages() {
+    yes | sudo pacman -Syu
     yes | sudo pacman -Syu --noconfirm # Update package list and upgrade all packages
     yes | sudo pacman -S --noconfirm python python-pip sddm firefox calamares
 }
